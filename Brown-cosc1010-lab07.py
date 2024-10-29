@@ -1,8 +1,8 @@
-# Your Name Here
+# Fisher Brown
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# Submission Date: 29 Oct 24
+# Lab 07
+# Lab Section: 10
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -16,10 +16,17 @@
     # To do so you can use the methods `.isdigit()` or `.isnumeric()`
     # If a user did not enter a number output a statement saying so
 # You will continue to prompt the user until a proper integer value is entered
+while True:
+    upper_bound = input('enter an upper bound to return the factorial: ')
+    if upper_bound.isnumeric():
+        break
+upper_bound = int(upper_bound)
+fact = 1
+while upper_bound > 0:
+    fact *= upper_bound
+    upper_bound -= 1
 
-factorial = 1
-
-print(f"The result of the factorial based on the given bound is {factorial}")
+print(f"The result of the factorial based on the given bound is {fact}")
 
 print("*"*75)
 # Create a while loop that prompts a user for input of an integer values
@@ -36,8 +43,21 @@ print("*"*75)
     # I recommend checking out: https://www.w3schools.com/python/ref_string_replace.asp to figure out how one may remove a character from a string
 # All this together means you will have an intensive while loop that includes multiple if statements, likely with some nesting 
 # The sum should start at 0 
-
-num_sum = 0 
+fire = True
+num_sum = 0
+while fire:
+    value = input('enter a number to be totaled up, type exit to end program: ')
+    if value.isnumeric():
+       value = int(value)
+       num_sum += value
+    elif '-' in value:
+        value = value.replace('-',' ')
+        value = int(value)
+        num_sum += -1*value
+    elif value.lower() == "exit":
+        fire = False
+    else:
+        print('make sure input is a number')
 
 print(f"Your final sum is {num_sum}")
 
@@ -58,5 +78,30 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
+calc = input('enter a calculation to be made in the form `operand operator operand`, type exit to leave program: ')
+calc = calc.replace(' ','')
+ 
+number = []
+ghost = True 
+while ghost:
+
+    calc = input('enter a calculation to be made in the form `operand operator operand`, type exit to leave program: ')
+
+    calc = calc.replace(' ','')
+
+    if calc.lower() == "exit":
+
+        ghost = False
+
+    if '+' in calc:
+        
+
+
+
+
+
+
+        
+    
 
         
