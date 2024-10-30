@@ -78,24 +78,47 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
-calc = input('enter a calculation to be made in the form `operand operator operand`, type exit to leave program: ')
-calc = calc.replace(' ','')
  
 number = []
 ghost = True 
 while ghost:
-
-    calc = input('enter a calculation to be made in the form `operand operator operand`, type exit to leave program: ')
-
+    calc = input('enter a calculation to be made in the form `operand operator operand`, type exit to leave: ')
     calc = calc.replace(' ','')
-
     if calc.lower() == "exit":
-
         ghost = False
-
-    if '+' in calc:
+    elif '+' in calc:
+        calc = calc.split('+')
+        calc[0] = int(calc[0])
+        calc[1] = int(calc[1])
+        result = calc[0] + calc[1]
+        print(result)
+    elif '-' in calc:
+        calc = calc.split('-')
+        calc[0] = int(calc[0])
+        calc[1] = int(calc[1])
+        result = calc[0] - calc[1]
+        print(result)
+    elif '*' in calc:
+        calc = calc.split('*')
+        calc[0] = int(calc[0])
+        calc[1] = int(calc[1])
+        result = calc[0] * calc[1]
+        print(result)  
+    elif '/' in calc:
+        calc = calc.split('/')
+        calc[0] = int(calc[0])
+        calc[1] = int(calc[1])
+        result = calc[0] / calc[1]
+        print(result)
+    elif '%' in calc:
+        calc = calc.split('%')
+        calc[0] = int(calc[0])
+        calc[1] = int(calc[1])
+        result = calc[0] % calc[1]
+        print(result)
+    else:
+        continue
         
-
 
 
 
